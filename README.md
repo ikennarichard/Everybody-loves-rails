@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h1><b>Everybody loves rails</b></h1>
+  <h1><b>Blog</b></h1>
 
 </div>
 
@@ -27,8 +27,8 @@
 
 # 📖 Project Name
 
-## Everybody loves rails
->Everybody loves rails is a blog where you'll find resources about rails technologies, you can leave likes and comment on posts and engage with the community. Built with Ruby on Rails
+## Blog
+>This project is a blog where you'll find resources about rails technologies, you can leave likes and comment on posts and engage with the community. Built with Ruby on Rails
 
 ## 🛠 Built With <a name="built-with"></a>
 
