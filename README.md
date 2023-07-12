@@ -82,6 +82,12 @@ bin/rails db:setup
 bin/rails server
 ```
 
+### Run test
+To run test, run the following command in the terminal
+```sh
+rails test
+```
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Ikenna Richard**
