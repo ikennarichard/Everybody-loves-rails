@@ -27,7 +27,7 @@
 
 # 📖 Everybody loves rails
 
->This project is a blog where you'll find resources about rails technologies, you can leave likes and comment on posts and engage with the community. Built with Ruby on Rails
+>This project is a blog where you'll find resources about rails technologies, you can leave likes/comment on posts and engage with the community. Built with Ruby on Rails
 
 ## 🛠 Built With <a name="built-with"></a>
 
