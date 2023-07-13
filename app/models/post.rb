@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_many :comments, foreign_key: 'post_id', dependent: :destroy
   has_many :likes, foreign_key: 'post_id', dependent: :destroy
 
-  def get_recent_comments
+  def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
 
