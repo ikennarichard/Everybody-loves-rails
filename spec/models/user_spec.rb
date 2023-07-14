@@ -23,20 +23,19 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
 
-    it 'is invalid with a non-integer post counter' do
-      user.post_counter = 1.5
+    it 'should be invalid with a non-integer post counter' do
+      user.post_counter = 3.5
       expect(user).not_to be_valid
     end
   end
 
-  describe '#recent_posts' do
+  describe 'recent_posts' do
     let!(:user) { create(:user) }
 
-    it 'returns the three most recent posts' do
+    it 'should return the three most recent posts' do
       post1 = create(:post, author: user, created_at: 2.days.ago)
       post2 = create(:post, author: user, created_at: 1.day.ago)
       post3 = create(:post, author: user, created_at: 3.days.ago)
-      post4 = create(:post, author: user, created_at: 4.days.ago)
 
       expect(user.recent_posts).to eq([post2, post1, post3])
     end

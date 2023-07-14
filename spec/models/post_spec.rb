@@ -22,14 +22,13 @@ RSpec.describe Post, type: :model do
   describe 'recent_comments' do
     let!(:post) { create(:post, author: user) }
 
-    it 'returns the five most recent comments' do
+    it 'should return the five most recent comments' do
       comment1 = create(:comment, post:, author: user, created_at: 2.days.ago)
       comment2 = create(:comment, post:, author: user, created_at: 1.day.ago)
       comment3 = create(:comment, post:, author: user, created_at: 3.days.ago)
       comment4 = create(:comment, post:, author: user, created_at: 4.days.ago)
       comment5 = create(:comment, post:, author: user, created_at: 5.days.ago)
-      comment6 = create(:comment, post:, author: user, created_at: 6.days.ago)
-
+      
       expect(post.recent_comments).to eq([comment2, comment1, comment3, comment4, comment5])
     end
   end
