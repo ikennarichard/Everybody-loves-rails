@@ -1,0 +1,10 @@
+<h1> User Name: <%=@user.name%></h1>
+<% if @posts.any? %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= post.title %> - <%= post.id %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No posts available.</p>
+<% end %>
