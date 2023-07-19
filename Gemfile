@@ -60,6 +60,9 @@ group :development, :test do
 
   # factory bot for creating stub for test
   gem 'factory_bot_rails'
+
+  # enables render template testing
+  gem 'rails-controller-testing'
 end
 
 group :development do
