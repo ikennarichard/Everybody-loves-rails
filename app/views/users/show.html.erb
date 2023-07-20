@@ -1,2 +1,20 @@
-<h1> User Name</h1>
-<p>display user info</p>
+<h2>User info</h2>
+<%= render 'shared/user', user:@user%>
+
+<p><b>Bio: </b>
+  <%=@user.bio%>
+</p>
+<% if @user.posts.any? %>
+  <ul>
+    <% @user.recent_posts.each do |post| %>
+      <li>
+      <a href='/users/<%=@user.id%>/posts'><%= post.title %></a>
+      <p>Comments: <%=post.comments_counter%></p>
+      <p>Likes: <%=post.likes_counter%></p>
+      </li>
+    <% end %>
+  </ul>
+  <button><a href='/users/<%=@user.id%>/posts'>See all post</a></button>
+<% else %>
+  <p>No posts available.</p>
+<%end%>

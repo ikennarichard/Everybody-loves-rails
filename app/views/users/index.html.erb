@@ -1,3 +1,7 @@
-<h1>Users</h1>
-<p>Users recent posts</p>
+<header>
+  <h1>Everybody Loves Rails</h1>
+</header>
 
+<div>
+    <%= render partial: "shared/user", collection: @users %>
+</div>
