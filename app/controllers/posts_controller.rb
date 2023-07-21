@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound
     render 'errors/not_found', status: :not_found
   end
 end
