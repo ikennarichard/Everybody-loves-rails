@@ -27,3 +27,19 @@
   width: fit-content;
   padding: 2px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 0.5em;
+}
+
+form > input[type='submit'] {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+form > textarea {
+  resize: none;
+}
