@@ -1,3 +1,18 @@
-<h1>Post title</h2>
 
-<h2>Comments</h2>
+<section>
+  <div>
+    <span class='post_details'>
+      <h2> Post #<%=@post.id%> by <%=@user.name%> </h2>
+      <p>Comments: <%=@post.comments_counter%>,</p>
+      <p>Likes: <%=@post.likes_counter%></p>
+    </span>
+
+    <p>Post: <%=@post.text%></p>
+  </div>
+   <div>
+   <b>Comments</b>
+    <%@post.comments.each do |comment|%>
+      <p><%=@user.name%>: <%=comment.text%></p>
+      <%end%>
+    </div>
+</section>

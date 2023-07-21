@@ -1,1 +1,28 @@
-<h1>Posts</h1>
+<h2> User posts</h2>
+<%= render 'shared/user', user:@user%>
+
+<div>
+  <% if @posts.any? %>
+    <ul>
+      <% @user.recent_posts.each do |post| %>
+        <li>
+        <div>
+          <a href='/users/<%=@user.id%>/posts/<%=post.id%>'>
+            <%= post.title %>
+          </a>
+          <p>Comments: <%=post.comments_counter%></p>
+          <p>Likes: <%=post.likes_counter%></p>
+        </div>
+        <div>
+        <%post.comments.each do |comment|%>
+          <p><%=@user.name%>: <%=comment.text%></p>
+          <%end%>
+        </div>
+        </li>
+      <% end %>
+    </ul>
+    <button>Pagination</button>
+  <% else %>
+    <p>No posts available.</p>
+  <%end%>
+</div>
