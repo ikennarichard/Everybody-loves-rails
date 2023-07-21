@@ -8,11 +8,16 @@
     </span>
 
   <p>Post: <%=@post.text%></p>
+  <%= render 'shared/like'%>
   </div>
    <div>
    <b>Comments</b>
     <%@post.comments.each do |comment|%>
       <p><%=@user.name%>: <%=comment.text%></p>
       <%end%>
+    <button>
+    <%= link_to 'Add new comment', new_comment_path %>
+    </button>
     </div>
+   
 </section>
