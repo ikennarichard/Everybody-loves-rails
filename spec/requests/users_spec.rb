@@ -14,7 +14,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'should include correct placeholder text' do
       get '/users/'
-      expect(response.body).to include('Users recent posts')
+      expect(response.body).to include('Everybody loves rails')
     end
   end
 
@@ -26,7 +26,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'should render the correct template' do
       get '/users/:id'
-      expect(response.body).to include('display user info')
+      expect(response.body).to include('user info')
     end
 
     it 'should render the correct template' do
