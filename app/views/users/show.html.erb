@@ -4,6 +4,8 @@
 <p><b>Bio: </b>
   <%=@user.bio%>
 </p>
+<%= link_to 'Add new post', new_post_path(user_id: @user.id) %>
+
 <% if @user.posts.any? %>
   <ul>
     <% @user.recent_posts.each do |post| %>
