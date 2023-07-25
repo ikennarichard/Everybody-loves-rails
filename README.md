@@ -36,8 +36,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Add post
-- Leave likes and comments on post
+- Add user, post
+- Add likes and comments on post
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,6 +87,11 @@ rails test
 
 - GitHub: [ikennarichard](https://github.com/ikennarichard)
 - LinkedIn: [ikenna_richard](https://linkedin.com/in/ikenna_richard)
+
+👤 **Spencer Okyere**
+
+- GitHub: [skabeo](https://github.com/skabeo)
+- LinkedIn: [spencer-okyere](https://www.linkedin.com/in/spencer-okyere/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
