@@ -58,9 +58,6 @@ group :development, :test do
   # rspec for unit test
   gem 'rspec-rails', '~> 5.0'
 
-  # capybara
-  gem 'capybara'
-
   # factory bot for creating stub for test
   gem 'factory_bot_rails'
 
@@ -81,6 +78,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
