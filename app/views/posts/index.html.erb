@@ -2,7 +2,8 @@
 <%= render 'shared/user', user:@user%>
 <%= link_to 'Add new post', new_post_path %>
 <div>
-  <% if @posts.any? %>
+  <% if @user.posts.any? %>
+  <b>Number of posts:<%=@user.posts.count%></b>
     <ul>
       <% @user.recent_posts.each do |post| %>
         <li>
@@ -10,6 +11,7 @@
           <a href='/users/<%=@user.id%>/posts/<%=post.id%>'>
             <%= post.title %>
           </a>
+          <p>Text: <%=post.text%></p>
           <p>Comments: <%=post.comments_counter%></p>
           <p>Likes: <%=post.likes_counter%></p>
         </div>

@@ -1,5 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'capybara/rspec'
+require 'selenium/webdriver'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -30,6 +32,24 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+chrome_driver_path = 'C:\Windows\chromedriver.exe'
+
+# Configure Capybara to use Chrome
+Capybara.register_driver :selenium_chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--start-maximized')
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options:)
+end
+
+Capybara.default_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium_chrome
+Capybara.raise_server_errors = false
+
+# Set the path to ChromeDriver executable
+Selenium::WebDriver::Chrome::Service.driver_path = chrome_driver_path
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{Rails.root}/spec/fixtures"
