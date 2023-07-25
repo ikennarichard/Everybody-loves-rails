@@ -39,8 +39,8 @@ chrome_driver_path = 'C:\Windows\chromedriver.exe'
 Capybara.register_driver :selenium_chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--start-maximized')
-  
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options:)
 end
 
 Capybara.default_driver = :selenium_chrome
