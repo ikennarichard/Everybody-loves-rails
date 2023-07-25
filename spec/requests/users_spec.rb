@@ -14,23 +14,23 @@ RSpec.describe 'Users', type: :request do
 
     it 'should include correct placeholder text' do
       get '/users/'
-      expect(response.body).to include('Everybody loves rails')
+      expect(response.body).to include('Everybody Loves Rails')
     end
   end
 
   describe 'GET /show' do
     it 'returns http success' do
-      get '/users/:id'
+      get '/users/1'
       expect(response).to have_http_status(:success)
     end
 
     it 'should render the correct template' do
-      get '/users/:id'
-      expect(response.body).to include('user info')
+      get '/users/1'
+      expect(response.body).to include('User info')
     end
 
     it 'should render the correct template' do
-      get '/users/:id'
+      get '/users/1'
       expect(response).to render_template('show')
     end
   end

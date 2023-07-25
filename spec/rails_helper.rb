@@ -65,3 +65,5 @@ RSpec.configure do |config|
   # factory bot
   config.include FactoryBot::Syntax::Methods
 end
+
+Capybara.default_driver = :selenium_chrome
