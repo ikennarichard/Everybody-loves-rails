@@ -46,25 +46,20 @@ RSpec.describe 'user show page', type: :feature do
     expect(page).to have_content('Your thigh bone is stonger than concreate')
   end
 
-  # scenario 'see all posts button' do
-  #   user = User.create(name: 'Spencer', bio: 'I\'m him', post_counter: 5)
-  #   visit user_show_path(user.id)
-  #   expect(page).to have_content('See all posts')
-  # end
+  scenario 'see all posts button' do
+    visit user_show_path(@user.id)
+    expect(page).to have_content('See all posts')
+  end
 
-  # scenario 'redirects to post show page' do
-  #   user = User.create(name: 'Spencer', bio: 'I\'m him', post_counter: 5)
-  #   post1 = Post.create(author_id: user.id, title: 'Greetings', text: 'Hello world', likes_counter: 5,
-  #                       comments_counter: 4)
-  #   visit user_show_path(user.id)
-  #   click_on 'Greetings'
-  #   expect(page).to have_current_path(posts_path(user_id: user.id, id: post1.id))
-  # end
+  scenario 'redirects to post show page' do
+    visit user_show_path(@user.id)
+    click_on 'Extra post'
+    expect(page).to have_current_path(posts_path(user_id: @user.id, id: @post4.id))
+  end
 
   # scenario "redirects to user's post index page when clicking 'See all posts'" do
-  #   user = User.create(name: 'Spencer', bio: "I'm him", post_counter: 5)
-  #   visit user_show_path(user.id)
-  #   click_button 'User info'
-  #   expect(page).to have_current_path(postindex(user.id))
+  #   visit user_show_path(@user.id)
+  #   click_button 'See all posts'
+  #   expect(page).to have_current_path(postindex_path(@user.id))
   # end
 end
