@@ -4,13 +4,13 @@ RSpec.describe 'user show page', type: :feature do
   before(:all) do
     @user = User.create(name: 'Spencer', bio: 'Spencer 1')
     @post1 = Post.create(author_id: @user.id, title: 'Greetings', text: 'Hello world', likes_counter: 5,
-      comments_counter: 4)
-    @post2= Post.create(author_id: @user.id, title: 'Music', text: 'Rap is the goat of genre', likes_counter: 5,
-        comments_counter: 4)
-    @post3= Post.create(author_id: @user.id, title: 'Fan fact', text: 'Your thigh bone is stonger than concreate',
-        likes_counter: 5, comments_counter: 4)
-    @post4= Post.create(author_id: @user.id, title: 'Extra post', text: 'Your thigh bone is stonger than concreate',
-        likes_counter: 5, comments_counter: 4)
+                         comments_counter: 4)
+    @post2 = Post.create(author_id: @user.id, title: 'Music', text: 'Rap is the goat of genre', likes_counter: 5,
+                         comments_counter: 4)
+    @post3 = Post.create(author_id: @user.id, title: 'Fan fact', text: 'Your thigh bone is stonger than concreate',
+                         likes_counter: 5, comments_counter: 4)
+    @post4 = Post.create(author_id: @user.id, title: 'Extra post', text: 'Your thigh bone is stonger than concreate',
+                         likes_counter: 5, comments_counter: 4)
   end
 
   scenario 'visible profile picture' do
