@@ -11,12 +11,13 @@
     <% @user.recent_posts.each do |post| %>
       <li>
       <a href='/users/<%=@user.id%>/posts'><%= post.title %></a>
+      <p>Text: <%= post.text %></p>
       <p>Comments: <%=post.comments_counter%></p>
       <p>Likes: <%=post.likes_counter%></p>
       </li>
     <% end %>
   </ul>
-  <button><a href='/users/<%=@user.id%>/posts'>See all post</a></button>
+  <button><a href='/users/<%=@user.id%>/posts'>See all posts</a></button>
 <% else %>
   <p>No posts available.</p>
 <%end%>
