@@ -81,4 +81,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  # gem 'chromedriver-helper'
 end
+
+gem "devise", "~> 4.9"
