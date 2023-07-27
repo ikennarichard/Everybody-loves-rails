@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true,
                                             greater_than_or_equal_to: 0 }
   after_save :update_post_counter
+  after_destroy :reduce_post_counter
 
   belongs_to :author, class_name: 'User'
   has_many :comments, foreign_key: 'post_id', dependent: :destroy
@@ -18,5 +19,9 @@ class Post < ApplicationRecord
 
   def update_post_counter
     author.increment!(:post_counter)
+  end
+
+  def reduce_post_counter
+    author.decrement!(:post_counter)
   end
 end
