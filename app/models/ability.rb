@@ -6,8 +6,10 @@ class Ability
   def initialize(user); 
     user ||= User.new
 
-    if user.role == 'admin'
-      can :destroy, Post, author: user
+    if user.admin?
+      can :manage, Post
+    else
+      can :read, Post
     end
   end
 end
