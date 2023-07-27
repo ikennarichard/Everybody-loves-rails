@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    flash[:notice] = "You have successfully logged in."
+    flash[:notice] = 'You have successfully logged in.'
     # if !user_signed_in?
     #   redirect_to new_user_registration_path
     # else
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound
     render 'errors/not_found', status: :not_found
   end
 
