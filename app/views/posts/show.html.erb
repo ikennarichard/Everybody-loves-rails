@@ -7,7 +7,10 @@
       <p>Likes: <%=@post.likes_counter%></p>
     </span>
     <b>Title: <%=@post.title%></b>
-  <p>Post: <%=@post.text%></p>
+    <p>Post: <%=@post.text%></p>
+    <% if can?(:destroy, @post) %>
+    <%= button_to 'Delete Post', posts_delete_path, method: :delete %>
+    <% end %>
   <%= render 'shared/like'%>
   </div>
    <div>
