@@ -84,4 +84,8 @@ group :test do
   # gem 'chromedriver-helper'
 end
 
+# user authentication
 gem 'devise', '~> 4.9'
+
+# user authorization
+gem 'cancancan'
