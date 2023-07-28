@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   delete '/users/:user_id/posts/:post_id/comments/:id', to: 'comments#destroy', as: :comments_delete
   
   post '/users/:user_id/posts/:id/likes/create', to: 'likes#create', as: 'like_post'
+
+  get '/users/:id/sign_out', to: 'application#sign_out_user', as: 'sign_out_user'
 end
