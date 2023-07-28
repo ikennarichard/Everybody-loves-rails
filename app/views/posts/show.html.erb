@@ -7,7 +7,7 @@
       <p>Likes: <%=@post.likes_counter%></p>
     </span>
     <b>Title: <%=@post.title%></b>
-    <p>Post: <%=@post.text%></p>
+    <p><%=@post.text%></p>
     <% if can?(:destroy, @post) %>
     <%= button_to 'Delete Post', posts_delete_path, method: :delete %>
     <% end %>
@@ -15,9 +15,17 @@
   </div>
    <div>
    <b>Comments</b>
+   <div class='comments_section'>
     <%@post.comments.each do |comment|%>
-      <p>user: <%=comment.author.name%>, reply: <%=comment.text%></p>
-      <%end%>
+      <p>
+        user: <%=comment.author.name%>, 
+        reply: <%=comment.text%>
+        <% if can?(:destroy, comment) %>
+        <%= button_to 'Delete Comment', comments_delete_path(post_id: @post.id, id: comment.id), method: :delete %>
+      </p>
+      <% end %>
+    <%end%>
+    </div>
     <button>
     <%= link_to 'Add new comment', new_comment_path %>
     </button>
