@@ -1,6 +1,9 @@
 <p class="notice"><%= notice %></p>
 <header>
   <h1>Everybody Loves Rails</h1>
+  <% if user_signed_in? %>
+  <%= link_to "Sign Out", sign_out_user_path(@users), method: :delete, class: 'sign-out' %>
+<% end %>
 </header>
 
 <div>

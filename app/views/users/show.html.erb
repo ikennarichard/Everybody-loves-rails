@@ -1,8 +1,6 @@
 <h2>User info</h2>
 <%= render 'shared/user', user:@user%>
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", sign_out_user_path, method: :delete %>
-<% end %>
+
 
 <p><b>Bio: </b>
   <%=@user.bio%>

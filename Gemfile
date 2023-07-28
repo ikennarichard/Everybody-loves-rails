@@ -89,3 +89,6 @@ gem 'devise', '~> 4.9'
 
 # user authorization
 gem 'cancancan'
+
+# JSON web token authentication
+gem 'devise-jwt'
