@@ -1,5 +1,4 @@
 class Api::V1::CommentsController < ApplicationController
-
   def index
     @comments = @post.comments
     render json: @comments
@@ -16,7 +15,7 @@ class Api::V1::CommentsController < ApplicationController
       render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
     end
   rescue ActiveRecord::RecordNotFound
-    flash[:notice] = "Post not found."
+    flash[:notice] = 'Post not found.'
   end
 
   private
