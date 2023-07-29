@@ -32,7 +32,6 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
     let(:user) { FactoryBot.create(:user) }
     let(:post1) { FactoryBot.create(:post) }
 
-
     it 'creates a comment for the post and associates it with the current user' do
       comment_params = { text: 'This is a test comment.', author_id: user.id }
 
@@ -40,7 +39,6 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
 
       expect(response).to have_http_status(:created)
       expect(response.content_type).to eq('application/json; charset=utf-8')
-
 
       comment = Comment.last
       expect(comment.text).to eq('This is a test comment.')
