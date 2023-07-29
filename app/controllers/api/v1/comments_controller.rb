@@ -10,17 +10,17 @@ module Api
     
       def create
         @comment = @post.comments.build(comment_params)
-        @comment.author_id = current_user&.id || comment_params[:author_id].
-    
+        @comment.author_id = current_user&.id || comment_params[:author_id]
+      
         if @comment.save
           render json: @comment, status: :created
         else
           render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
         end
       rescue ActiveRecord::RecordNotFound
-        flash[:notice] = "Post not found."
+        render json: { error: 'Post not found.' }, status: :not_found
       end
-    
+      
       private
     
       def comment_params
