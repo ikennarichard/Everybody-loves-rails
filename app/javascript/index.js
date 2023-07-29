@@ -3,4 +3,4 @@ function slideUp() {
   notice.classList.add('slide-up');
 }
 
-setTimeout(slideUp, 2000);
+setTimeout(slideUp, 5000);
