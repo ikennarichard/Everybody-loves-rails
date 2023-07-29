@@ -19,12 +19,10 @@ Rails.application.routes.draw do
   
   get '/users/:id/sign_out', to: 'application#sign_out_user', as: 'sign_out_user'
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :users do
-        resources :posts, only: [:index] do
-          resources :comments, only: [:index, :create]
-        end
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
       end
     end
   end
