@@ -21,7 +21,7 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
       expect(parsed_response.size).to eq(5)
 
       parsed_response.each do |comment_json|
-        comment = Comment.find(comment_json['id'])
+        Comment.find(comment_json['id'])
         expect(comment_json).to include('author_id', 'post_id', 'text')
         expect(comment_json['post_id']).to eq(post.id)
       end
