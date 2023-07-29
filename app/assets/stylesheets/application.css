@@ -1,7 +1,8 @@
 .card {
   display: flex;
   align-items: center;
-  gap: 4em;
+  gap: 2em;
+  margin-top: 5px;
 }
 
 .user_image {
@@ -80,4 +81,10 @@
 
 .slide-up {
   max-height: 0;
+}
+
+.sign-out {
+  border: 1px solid black;
+  padding: 3px;
+  margin-top: -5px;
 }
